@@ -5,13 +5,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Home() {
+  const URL_BASE = "https://infokiwanas.com/v1.0/api/fibonacci";
   const [series, setSeries] = useState([]);
   const [reload, setReload] = useState(new Date());
   const getSeries = async () => {
     try {
-      const series = await axios.get(
-        "http://localhost:8080/v1.0/api/fibonacci"
-      );
+      const series = await axios.get(URL_BASE);
       setSeries(series?.data);
     } catch (err) {
       console.log(err);
@@ -23,7 +22,7 @@ export default function Home() {
   }, [reload]);
 
   const handleClick = async () => {
-    await axios.post("http://localhost:8080/v1.0/api/fibonacci");
+    await axios.post(URL_BASE);
     alert("Fibonacci serie generated");
     setReload(new Date());
   };

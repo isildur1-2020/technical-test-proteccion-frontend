@@ -41,7 +41,10 @@ body {
 }
 
 .Home__item {
-  width: 40%;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 8px 0;
+  width: 800px;
   display: flex;
   flex-direction: column;
   overflow-x: scroll;
@@ -49,6 +52,7 @@ body {
 }
 
 .Home__series {
+
   display: flex;
   align-items: center;
   flex-direction: column;
