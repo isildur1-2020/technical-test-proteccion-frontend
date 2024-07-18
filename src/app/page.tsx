@@ -10,7 +10,7 @@ export default function Home() {
   const getSeries = async () => {
     try {
       const series = await axios.get(
-        "http://85.209.95.164:3000/v1.0/api/fibonacci"
+        "http://localhost:8080/v1.0/api/fibonacci"
       );
       setSeries(series?.data);
     } catch (err) {
@@ -23,7 +23,7 @@ export default function Home() {
   }, [reload]);
 
   const handleClick = async () => {
-    await axios.post("http://85.209.95.164:3000/v1.0/api/fibonacci");
+    await axios.post("http://localhost:8080/v1.0/api/fibonacci");
     alert("Fibonacci serie generated");
     setReload(new Date());
   };
